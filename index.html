@@ -1,66 +1,457 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>EVE Online Starter Guide</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <title>EVE Online Beginner Guide – Free 1M Skillpoints</title>
+    <meta
+        name="description"
+        content="Start EVE Online with 1 million free skill points using a recruit link. Beginner guide for mining, exploration, faction warfare and earning ISK."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="EVE Online Beginner Guide – Free 1M Skillpoints" />
+    <meta
+        property="og:description"
+        content="Get 1M free skillpoints and learn the best beginner activities in EVE Online."
+    />
+    <meta property="og:type" content="website" />
+
     <style>
-
-        body{
-            font-family:Arial;
-            max-width:800px;
-            margin:auto;
-            padding:40px;
-            background:#111;
-            color:#eee;
+        :root {
+            --bg: #0b1220;
+            --bg-soft: #111827;
+            --panel: #0f172a;
+            --panel-2: #111c33;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --blue: #60a5fa;
+            --blue-strong: #3b82f6;
+            --cyan: #22d3ee;
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
 
-        h1{
-            color:#00bfff;
+        * {
+            box-sizing: border-box;
         }
 
-        a.button{
-            display:inline-block;
-            padding:15px 25px;
-            background:#00bfff;
-            color:white;
-            text-decoration:none;
-            border-radius:6px;
-            font-size:20px;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at top, rgba(59, 130, 246, 0.18), transparent 30%),
+                linear-gradient(180deg, #08101d 0%, #0b1220 100%);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--blue);
+        }
+
+        .hero {
+            padding: 72px 24px 56px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)),
+                rgba(0, 0, 0, 0.18);
+        }
+
+        .hero-inner {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 6px 12px;
+            border: 1px solid rgba(96, 165, 250, 0.35);
+            border-radius: 999px;
+            color: var(--cyan);
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            background: rgba(34, 211, 238, 0.06);
+        }
+
+        h1 {
+            margin: 0 0 16px;
+            font-size: 44px;
+            line-height: 1.1;
+            color: #f8fafc;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto 16px;
+            font-size: 18px;
+            color: var(--muted);
+        }
+
+        .hero strong {
+            color: #fff;
+        }
+
+        .button-row {
+            margin-top: 28px;
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 24px;
+            background: linear-gradient(180deg, #4f9cf9, #2563eb);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: var(--shadow);
+            transition: transform 0.15s ease, opacity 0.15s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            opacity: 0.96;
+        }
+
+        .button.secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.14);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 28px 20px 56px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 22px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, var(--panel), var(--panel-2));
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            margin-bottom: 22px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            font-size: 26px;
+            color: #f8fafc;
+        }
+
+        .card h3 {
+            margin: 18px 0 8px;
+            color: var(--blue);
+        }
+
+        .card p,
+        .card li {
+            color: var(--text);
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        .mini-list li {
+            margin-bottom: 10px;
+        }
+
+        .news-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .news-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .news-list li:last-child {
+            border-bottom: none;
+        }
+
+        .news-list a {
+            color: #dbeafe;
+            text-decoration: none;
+        }
+
+        .news-list a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: rgba(96, 165, 250, 0.08);
+            border: 1px solid rgba(96, 165, 250, 0.18);
+            color: #dbeafe;
+            margin-top: 16px;
+        }
+
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .steps li {
+            position: relative;
+            padding-left: 46px;
+            margin-bottom: 16px;
+        }
+
+        .steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            background: var(--blue-strong);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .cta-bottom {
+            text-align: center;
+        }
+
+        footer {
+            padding: 28px 20px 36px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 860px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+        }
     </style>
 </head>
-
 <body>
+<header class="hero">
+    <div class="hero-inner">
+        <div class="eyebrow">EVE Online Starter Portal</div>
 
-<h1>Start EVE Online with 1M Free Skillpoints</h1>
+        <h1>Start EVE Online with 1M Free Skillpoints</h1>
 
-<p>
-    If you are starting <b>EVE Online</b>, you can get
-    <b>1,000,000 free skillpoints</b> using a recruit link.
-</p>
+        <p>
+            If you are creating a new <strong>EVE Online</strong> account, you can start
+            with <strong>1,000,000 free skill points</strong> using a recruit link.
+        </p>
 
-<p>
-    This helps you train ships faster and start making ISK earlier.
-</p>
+        <p>
+            This gives you a much faster start for exploration, mining, faction warfare,
+            PvE and early ISK-making.
+        </p>
 
-<p>
-    <a class="button" href="TWOJ_LINK_RECRUIT">
-        Create EVE Account + 1M SP
-    </a>
-</p>
+        <div class="button-row">
+            <a class="button" href="TWOJ_LINK_RECRUIT" target="_blank" rel="noopener noreferrer">
+                Create Account + 1M SP
+            </a>
 
-<h2>Best beginner activities</h2>
+            <a class="button secondary" href="#guide">
+                Read Beginner Guide
+            </a>
+        </div>
+    </div>
+</header>
 
-<ul>
-    <li>Exploration (easy ISK)</li>
-    <li>Gas harvesting</li>
-    <li>Faction warfare</li>
-</ul>
+<main class="container">
+    <div class="grid">
+        <section>
+            <div class="card" id="guide">
+                <h2>Why use a Recruit Link?</h2>
 
-<p>
-    Fly safe capsuleer.
-</p>
+                <ul class="mini-list">
+                    <li>Get <strong>1,000,000 free skill points</strong> on a new account.</li>
+                    <li>Train into useful ships and modules much faster.</li>
+                    <li>Skip a big part of the slow early-game progression.</li>
+                    <li>Start earning ISK sooner and test more activities quickly.</li>
+                </ul>
 
+                <div class="info-box">
+                    Recruit links only work for <strong>newly created accounts</strong>, so use it before you register.
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Best Beginner Activities in EVE Online</h2>
+
+                <h3>Exploration</h3>
+                <p>
+                    Exploration is one of the best ways to make early ISK. A cheap frigate can already
+                    earn surprisingly good money in relic and data sites.
+                </p>
+
+                <h3>Gas Harvesting</h3>
+                <p>
+                    Gas huffing is a great option if you enjoy a mining-like style but want better income
+                    potential, especially in wormhole space.
+                </p>
+
+                <h3>Faction Warfare</h3>
+                <p>
+                    If you want combat early, faction warfare is one of the best paths. You can learn PvP,
+                    earn loyalty points and start fighting quickly.
+                </p>
+
+                <h3>Mining</h3>
+                <p>
+                    Mining is simple, relaxing and works well for players who want a calm start, especially
+                    if you plan to multibox or join a corporation later.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Recommended Starter Ships</h2>
+
+                <ul class="mini-list">
+                    <li><strong>Heron</strong> – great beginner exploration frigate.</li>
+                    <li><strong>Venture</strong> – best first ship for mining and gas harvesting.</li>
+                    <li><strong>Tristan</strong> – strong early combat choice for new players.</li>
+                    <li><strong>Magnate / Imicus / Probe</strong> – good exploration options depending on faction.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>How to Start</h2>
+
+                <ol class="steps">
+                    <li>Open the recruit link and create a new EVE Online account.</li>
+                    <li>Claim your free 1M skill points.</li>
+                    <li>Finish the tutorial and career agents.</li>
+                    <li>Choose your first activity: exploration, mining, combat or faction warfare.</li>
+                    <li>Train into your first useful ship and start building income.</li>
+                </ol>
+            </div>
+
+            <div class="card cta-bottom">
+                <h2>Create Your EVE Account</h2>
+                <p class="muted">
+                    Use the link below to begin with the recruit bonus and a faster start.
+                </p>
+
+                <a class="button" href="https://www.eveonline.com/signup?invc=489b9a6c-b5e0-442b-8780-c4860600941" target="_blank" rel="noopener noreferrer">
+                    Start Playing EVE
+                </a>
+            </div>
+        </section>
+
+        <aside>
+            <div class="card">
+                <h2>Latest EVE News</h2>
+                <ul id="eve-news" class="news-list">
+                    <li>Loading latest news...</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Latest Patch Notes</h2>
+                <ul id="eve-patchnotes" class="news-list">
+                    <li>Loading latest patch notes...</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Quick Starter Advice</h2>
+                <ul class="mini-list">
+                    <li>Do the tutorial and career agents first.</li>
+                    <li>Do not fly what you cannot afford to lose.</li>
+                    <li>Keep your first ships cheap and practical.</li>
+                    <li>Exploration is usually one of the fastest early-money methods.</li>
+                    <li>Join a beginner-friendly corporation when you feel ready.</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <p>EVE Online Beginner Guide • Fly safe, capsuleer.</p>
+</footer>
+
+<script>
+    async function loadRssIntoList(feedUrl, listId, limit = 5) {
+        const list = document.getElementById(listId);
+
+        try {
+            const proxyUrl =
+                "https://api.allorigins.win/get?url=" + encodeURIComponent(feedUrl);
+
+            const response = await fetch(proxyUrl);
+            const data = await response.json();
+
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(data.contents, "text/xml");
+            const items = xml.querySelectorAll("item");
+
+            list.innerHTML = "";
+
+            if (!items.length) {
+                list.innerHTML = "<li>No entries available right now.</li>";
+                return;
+            }
+
+            Array.from(items)
+                 .slice(0, limit)
+                 .forEach((item) => {
+                     const title = item.querySelector("title")?.textContent || "Untitled";
+                     const link = item.querySelector("link")?.textContent || "#";
+
+                     const li = document.createElement("li");
+                     li.innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>`;
+                     list.appendChild(li);
+                 });
+        } catch (error) {
+            list.innerHTML = "<li>Could not load feed right now.</li>";
+            console.error("RSS load error:", error);
+        }
+    }
+
+    loadRssIntoList("https://www.eveonline.com/rss/news", "eve-news", 5);
+    loadRssIntoList("https://www.eveonline.com/rss/patch-notes", "eve-patchnotes", 5);
+</script>
 </body>
 </html>
