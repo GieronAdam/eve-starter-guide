@@ -1,59 +1,25 @@
-<!DOCTYPE html>
-<html>
+<h2>Compressed Ore Trading</h2>
 
-<head>
+<table id="oreTable">
 
-    <meta charset="utf-8">
+    <thead>
 
-    <title>EVE Online Jita Trade Finder</title>
+    <tr>
+        <th>Ore</th>
+        <th>Buy</th>
+        <th>Sell</th>
+        <th>Margin %</th>
+        <th>Volume</th>
+    </tr>
 
-    <meta name="description"
-          content="Find the best trading opportunities in Jita. Items with the best buy/sell margin in EVE Online.">
+    </thead>
 
-    <link rel="stylesheet" href="style.css">
+    <tbody>
 
-</head>
+    <tr>
+        <td colspan="5">Loading ore market...</td>
+    </tr>
 
-<body>
+    </tbody>
 
-<div class="container">
-
-    <h1>Jita Trade Finder</h1>
-
-    <p>
-        Items with the best margin between buy and sell orders in Jita.
-    </p>
-
-    <table id="tradeTable">
-
-        <thead>
-
-        <tr>
-            <th>Item</th>
-            <th>Buy</th>
-            <th>Sell</th>
-            <th>Margin %</th>
-            <th>Volume</th>
-        </tr>
-
-        </thead>
-
-        <tbody>
-
-        <tr>
-            <td colspan="5">
-                Loading market data...
-            </td>
-        </tr>
-
-        </tbody>
-
-    </table>
-
-</div>
-
-<script src="jita.js"></script>
-
-</body>
-
-</html>
+</table>
