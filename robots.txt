@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gieronadam.github.io/eve-starter-guide/sitemap.xml
