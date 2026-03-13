@@ -36,5 +36,18 @@ async function loadRssIntoList(feedUrl, listId, limit = 5) {
     }
 }
 
+function copyFit(button) {
+
+    const fit = button.previousElementSibling.innerText;
+
+    navigator.clipboard.writeText(fit);
+
+    button.innerText = "Copied!";
+
+    setTimeout(() => {
+        button.innerText = "Copy Fit";
+    }, 1500);
+}
+
 loadRssIntoList("https://www.eveonline.com/rss/news", "eve-news", 5);
 loadRssIntoList("https://www.eveonline.com/rss/patch-notes", "eve-patchnotes", 5);

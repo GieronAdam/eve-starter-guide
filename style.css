@@ -301,3 +301,27 @@ footer {
         align-items: flex-start;
     }
 }
+
+.fit {
+    background: #020617;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    white-space: pre;
+    color: #e2e8f0;
+    border: 1px solid #1e293b;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #3b82f6;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2563eb;
+}
