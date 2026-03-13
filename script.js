@@ -49,5 +49,4 @@ function copyFit(button) {
     }, 1500);
 }
 
-loadRssIntoList("https://www.eveonline.com/rss/news", "eve-news", 5);
-loadRssIntoList("https://www.eveonline.com/rss/patch-notes", "eve-patchnotes", 5);
+loadRssIntoList("https://www.eveonline.com/rss", "eve-news", 10);
