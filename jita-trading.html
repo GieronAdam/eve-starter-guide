@@ -1,170 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-
+    <meta charset="utf-8" />
     <title>EVE Online Jita Market Tools</title>
-
-    <meta name="description"
-          content="EVE Online market tools. Find best trading margins in Jita and calculate compressed ore refining profit.">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="style.css">
-
+    <meta
+        name="description"
+        content="EVE Online market tools. Find the best trading margins in Jita and calculate compressed ore refining profit."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
 </head>
-
-
 <body>
 
-
 <div class="topbar">
-
     <div class="topbar-inner">
-
-        <a class="brand" href="index.html">
-            EVE Starter Guide
-        </a>
+        <a class="brand" href="index.html">EVE Starter Guide</a>
 
         <nav class="nav">
-
             <a href="index.html">Home</a>
             <a href="exploration-guide.html">Exploration</a>
             <a href="mining-guide.html">Mining</a>
             <a href="beginner-ships.html">Ships</a>
             <a href="fits.html">Fits</a>
             <a class="active" href="jita-trading.html">Jita Market</a>
-
         </nav>
-
     </div>
 </div>
 
-
-
 <header class="hero">
-
     <div class="hero-inner">
+        <div class="eyebrow">EVE Online Market Tools</div>
 
-        <div class="eyebrow">
-            EVE Online Market Tools
-        </div>
-
-        <h1>
-            Jita Trading & Refining Calculator
-        </h1>
+        <h1>Jita Trading & Refining Calculator</h1>
 
         <p>
-            Find trading margins in Jita and calculate profit from refining compressed ores.
+            Check Jita margins, browse compressed ore prices and estimate refining profit
+            based on your skills and facility settings.
         </p>
 
+        <div class="button-row">
+            <a class="button" href="TWOJ_LINK_RECRUIT" target="_blank" rel="noopener noreferrer">
+                Create Account + 1M SP
+            </a>
+        </div>
     </div>
-
 </header>
-
-
 
 <main class="container">
 
-
-    <!-- ================================= -->
-    <!-- JITA TRADING TABLE -->
-    <!-- ================================= -->
-
     <section class="card">
-
         <h2>Top Jita Trading Items</h2>
-
         <p class="muted">
-            Items with the best spread between buy and sell orders in Jita 4-4.
+            Selected items with the best margin between buy and sell orders in Jita 4-4.
         </p>
 
-        <table id="tradeTable">
-
-            <thead>
-
-            <tr>
-                <th>Item</th>
-                <th>Buy</th>
-                <th>Sell</th>
-                <th>Margin %</th>
-                <th>Volume</th>
-            </tr>
-
-            </thead>
-
-            <tbody>
-
-            <tr>
-                <td colspan="5">Loading market data...</td>
-            </tr>
-
-            </tbody>
-
-        </table>
-
+        <div class="table-wrap">
+            <table id="tradeTable" class="market-table">
+                <thead>
+                <tr>
+                    <th class="col-text">Item</th>
+                    <th class="col-num">Buy</th>
+                    <th class="col-num">Sell</th>
+                    <th class="col-num">Margin %</th>
+                    <th class="col-num">Volume</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="5">Loading market data...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
-
-
-    <!-- ================================= -->
-    <!-- COMPRESSED ORE MARKET -->
-    <!-- ================================= -->
-
     <section class="card">
-
         <h2>Compressed Ore Market (Jita)</h2>
-
-        <table id="oreTable">
-
-            <thead>
-
-            <tr>
-                <th>Ore</th>
-                <th>Buy</th>
-                <th>Sell</th>
-                <th>Margin %</th>
-                <th>Volume</th>
-            </tr>
-
-            </thead>
-
-            <tbody>
-
-            <tr>
-                <td colspan="5">Loading ore market...</td>
-            </tr>
-
-            </tbody>
-
-        </table>
-
-    </section>
-
-
-
-    <!-- ================================= -->
-    <!-- REFINING SETTINGS -->
-    <!-- ================================= -->
-
-    <section class="card">
-
-        <h2>Refining Settings</h2>
-
         <p class="muted">
-            Your skills affect refining output. Adjust them to estimate profit.
+            Quick view of buy, sell, spread and volume for selected compressed belt ores.
         </p>
 
+        <div class="table-wrap">
+            <table id="oreTable" class="market-table">
+                <thead>
+                <tr>
+                    <th class="col-text">Ore</th>
+                    <th class="col-num">Buy</th>
+                    <th class="col-num">Sell</th>
+                    <th class="col-num">Margin %</th>
+                    <th class="col-num">Volume</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="5">Loading ore market...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Refining Settings</h2>
+        <p class="muted">
+            Adjust your skills and facility to estimate refining value more realistically.
+        </p>
 
         <div class="settings-grid">
-
-
-            <div>
-
-                <label>Reprocessing</label>
-
+            <div class="field">
+                <label for="refiningSkill">Reprocessing</label>
                 <select id="refiningSkill">
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -173,14 +117,10 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-
             </div>
 
-
-            <div>
-
-                <label>Reprocessing Efficiency</label>
-
+            <div class="field">
+                <label for="efficiencySkill">Reprocessing Efficiency</label>
                 <select id="efficiencySkill">
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -189,14 +129,10 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-
             </div>
 
-
-            <div>
-
-                <label>Ore Processing Skill</label>
-
+            <div class="field">
+                <label for="oreSkill">Ore Processing Skill</label>
                 <select id="oreSkill">
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -205,88 +141,55 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-
             </div>
 
-
-            <div>
-
-                <label>Facility</label>
-
+            <div class="field">
+                <label for="facilityBonus">Facility</label>
                 <select id="facilityBonus">
                     <option value="0.5">NPC Station 50%</option>
                     <option value="0.52">Structure 52%</option>
                     <option value="0.54">Tatara / Rigged 54%</option>
                 </select>
-
             </div>
 
-
-            <div>
-
-                <label>Tax %</label>
-
-                <input id="taxRate" type="number" value="0" min="0" max="100">
-
+            <div class="field">
+                <label for="taxRate">Tax %</label>
+                <input id="taxRate" type="number" value="0" min="0" max="100" step="0.1" />
             </div>
-
         </div>
-
     </section>
-
-
-
-    <!-- ================================= -->
-    <!-- REFINING PROFIT -->
-    <!-- ================================= -->
 
     <section class="card">
-
         <h2>Ore Refining Profit</h2>
+        <p class="muted">
+            Estimated value of refined minerals compared to the current Jita ore buy price.
+        </p>
 
-        <table id="refineTable">
-
-            <thead>
-
-            <tr>
-                <th>Ore</th>
-                <th>Ore Price</th>
-                <th>Mineral Value</th>
-                <th>Profit</th>
-            </tr>
-
-            </thead>
-
-            <tbody>
-
-            <tr>
-                <td colspan="4">Loading refine data...</td>
-            </tr>
-
-            </tbody>
-
-        </table>
-
+        <div class="table-wrap">
+            <table id="refineTable" class="market-table">
+                <thead>
+                <tr>
+                    <th class="col-text">Ore</th>
+                    <th class="col-num">Ore Price</th>
+                    <th class="col-num">Mineral Value</th>
+                    <th class="col-num">Profit</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="4">Loading refine data...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
-
-
 
 </main>
 
-
-
 <footer>
-
-    <p>
-        EVE Online Market Tools • Fly safe capsuleer
-    </p>
-
+    <p>EVE Online Market Tools • Fly safe capsuleer</p>
 </footer>
 
-
-
 <script src="jita.js"></script>
-
 </body>
-
 </html>
